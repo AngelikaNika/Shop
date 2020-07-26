@@ -1,0 +1,21 @@
+<p>catalog works!</p>
+
+<ul>
+    <li *ngFor="let product of products">
+      {{ product.name }}
+      {{ product.price }}
+      <button clas="add" (click)="addToCart(product)">Add</button>
+    </li>
+  </ul>
+
+
+  <ul>
+    <li *ngFor="let product of cart; let i = index">
+      {{ product.name }}
+      {{ product.price }}
+      <button clas="remove" (click)="remove(i)">Remove</button>
+      <button [routerLink]="['/first-component', product.id]">check details</button>
+    </li>
+  </ul>
+
+  <p>Cart sum: {{ sum }}</p>
